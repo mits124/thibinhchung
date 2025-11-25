@@ -1,0 +1,266 @@
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=REM:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+        
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --font-primary: 'REM', sans-serif;
+            --font-secondary: 'Sansation', sans-serif;
+            --text-primary: #F9F8F6;
+            --text-secondary: #F8FAFC;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Header */
+        header {
+            background-color: #8C1007;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            max-height: 70px;
+        }
+
+        header .logo .logo-80{
+            width: 150px;
+            height: auto;
+            padding-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .menu-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 8px 12px;
+            transition: background-color 0.3s;
+        }
+
+        .menu-btn:hover {
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .logo-subtitle {
+            font-size: 10px;
+            opacity: 0.9;
+            margin-top: 2px;
+        }
+
+        .user-btn {
+            background: none;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Overlay */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 150;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        #overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Sidebar Menu */
+        #sidebar {
+            position: fixed;
+            top: 0;
+            left: -320px;
+            width: 320px;
+            height: 100%;
+            background-color: #8A0000;
+            color: white;
+            z-index: 200;
+            transition: left 0.3s ease;
+            overflow-y: auto;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+        }
+
+        #sidebar.open {
+            left: 0;
+        }
+
+        /* Menu Header */
+        .menu-header {
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .menu-logo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+            line-height: 1;
+        }
+
+        .close-btn:hover {
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+
+
+        /* Menu Items */
+        .menu-items {
+            list-style: none;
+        }
+
+        .menu-items li {
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .menu-items a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            transition: background-color 0.3s;
+        }
+
+        .menu-items a:hover {
+            background-color: rgba(0,0,0,0.2);
+        }
+
+        .menu-items .arrow {
+            font-size: 20px;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 70px;;
+        
+        }
+
+        .content-card {
+            position : relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            margin-bottom: 0;
+        }
+
+        .content-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .content-card .overlay {  
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+            z-index: 1;
+        }
+        .content-card .card-body {
+            padding: 20px;
+            position: absolute;
+            bottom: 0;
+            left: 100px;
+            max-width: 600px;
+            z-index: 2;
+            margin-bottom: 100px;
+        }
+
+        .content-card .date {
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+
+        .card-body h1 {
+            font-family: var(--font-primary);
+            font-size: 2rem;
+            margin: 15px 0;
+            color: var(--text-primary);
+        }
+        .card-body .h2-script {
+            font-family: var(--font-secondary);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px){
+            .logo {
+                margin-right: 17px;
+            }
+            .h2-script {
+                display: none;
+            }
+            .content-card .card-body {
+                left: 0;
+                margin-bottom: 50px
+            }
+            .content-card {
+                height: 400px;
+            }
+            .content-card .title-header{
+                font-size: 30px;
+            }
+            header {
+                height: 60px;
+            }
+            main {
+                margin-top: 0;
+            }
+        }
